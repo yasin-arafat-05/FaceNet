@@ -210,7 +210,7 @@ Now, We're gonna learn a similarity function. We're gonna instead of like actual
 
 ---
 
-# Let's fine simillary of movies and For image embedding can we use simple CNN:
+# Let's fine simillary of movies and For image embedding can we use simple CNN?:
 
 <br>
 <br>
@@ -247,7 +247,7 @@ The **ImageNet Large Scale Visual Recognition Challenge (ILSVRC)**, which began 
 - **Model:** **ZFNet** by Matthew Zeiler and Rob Fergus
 - **Overview:** ZFNet, an improvement over AlexNet, won the 2013 challenge with an error rate of 11.7%. It featured a more refined architecture with deeper layers and better hyperparameter tuning. ZFNet's contribution was critical in understanding and visualizing the workings of CNNs, offering insights into feature extraction and network optimization.
 
-### 2014: VGG (Deep Learning)
+### 2014: VGGNet (Deep Learning)
 - **Error Rate:** 7.3%
 - **Model:** **VGG** by the Visual Geometry Group at the University of Oxford
 - **Overview:** VGGNet, introduced in 2014, achieved a 7.3% error rate by using very deep convolutional networks with small (3x3) filters. The VGG model's simplicity and uniformity in architecture, despite its depth (up to 19 layers), demonstrated that increasing depth could improve performance. VGGNet became a popular model for transfer learning in various computer vision tasks.
@@ -269,4 +269,13 @@ The **ImageNet Large Scale Visual Recognition Challenge (ILSVRC)**, which began 
 
 This progression from 2010 to 2016 highlights the rapid advancements in deep learning and the importance of large-scale challenges like ILSVRC in driving innovation in the field.
 
+<br>
+<br>
+
+![image_image](note_image/pic05.png)
+
+`Fully connected layer এর মধ্যে softmax activation function use করার পর আমরা output পায় । output এর আগের layer টাকে আমরা Image Embedding হিসেবে ব্যবহার করতে পারি । `
+
+<br>
+<br>
 
