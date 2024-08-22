@@ -216,3 +216,57 @@ Now, We're gonna learn a similarity function. We're gonna instead of like actual
 <br>
 <br>
 
+![image](note_image/pic04png.png)
+
+<br>
+
+`উপরের ছবিতে cartesian coordinate system এ axis condition দিয়ে কয়েকটা movie এর ডাটাসেট চিত্রিত করেছি । প্রতেকটি movie এর coordinate আছে । দুইটা movie এর মধ্যে দুরত্ব যত কম হবে movie দুইটা তত simillar হবে । `
+
+<br>
+
+## `Now, Let's talk about the histroy of CNN and pre-trained model: `
+<br>
+
+The **ImageNet Large Scale Visual Recognition Challenge (ILSVRC)**, which began in 2010, has been a major benchmark in the development of machine learning and deep learning models for image classification. Below is a breakdown of the ILSVRC progression from 2010 to 2016, focusing on the models that participated, their performances, and additional relevant information:
+
+### 2010: Early ML Models
+- **Error Rate:** ~28%
+- **Overview:** The first ILSVRC was dominated by traditional machine learning models using hand-engineered features like SIFT (Scale-Invariant Feature Transform) and HOG (Histogram of Oriented Gradients). These models achieved an error rate of around 28%. The competition highlighted the limitations of traditional approaches in handling large-scale image recognition tasks.
+
+### 2011: Improved ML Models
+- **Error Rate:** ~25%
+- **Overview:** In 2011, machine learning models saw modest improvements, reducing the error rate to around 25%. The methods continued to rely on handcrafted features and shallow learning architectures. However, the performance gains were incremental, emphasizing the need for more sophisticated models.
+
+### 2012: AlexNet (Deep Learning)
+- **Error Rate:** 16.4%
+- **Model:** **AlexNet** by Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton
+- **Overview:** 2012 marked a significant breakthrough in image recognition with the introduction of AlexNet, a deep convolutional neural network (CNN). It achieved a 16.4% error rate, vastly outperforming previous methods. AlexNet utilized ReLU (Rectified Linear Unit) activations, dropout for regularization, and GPU acceleration, revolutionizing the field of deep learning and initiating the widespread adoption of CNNs.
+
+### 2013: ZFNet (Deep Learning)
+- **Error Rate:** 11.7%
+- **Model:** **ZFNet** by Matthew Zeiler and Rob Fergus
+- **Overview:** ZFNet, an improvement over AlexNet, won the 2013 challenge with an error rate of 11.7%. It featured a more refined architecture with deeper layers and better hyperparameter tuning. ZFNet's contribution was critical in understanding and visualizing the workings of CNNs, offering insights into feature extraction and network optimization.
+
+### 2014: VGG (Deep Learning)
+- **Error Rate:** 7.3%
+- **Model:** **VGG** by the Visual Geometry Group at the University of Oxford
+- **Overview:** VGGNet, introduced in 2014, achieved a 7.3% error rate by using very deep convolutional networks with small (3x3) filters. The VGG model's simplicity and uniformity in architecture, despite its depth (up to 19 layers), demonstrated that increasing depth could improve performance. VGGNet became a popular model for transfer learning in various computer vision tasks.
+
+### 2015: GoogleNet/Inception (Deep Learning)
+- **Error Rate:** 6.7%
+- **Model:** **GoogleNet (Inception v1)** by Google
+- **Overview:** GoogleNet, also known as Inception v1, won the 2015 challenge with an error rate of 6.7%. It introduced the concept of "Inception modules," allowing the network to choose among different convolutional filter sizes within the same layer. This approach made the model more computationally efficient while achieving state-of-the-art performance. The architecture was much deeper but more efficient compared to VGGNet.
+
+### 2016: ResNet (Deep Learning)
+- **Error Rate:** 3.5%
+- **Model:** **ResNet** (Residual Networks) by Microsoft Research
+- **Overview:** ResNet, with its groundbreaking error rate of 3.5%, won the 2016 challenge. ResNet introduced "residual connections" or "skip connections" that allowed very deep networks (up to 152 layers) to be trained effectively without suffering from vanishing gradients. The architecture enabled the training of ultra-deep networks, leading to a significant reduction in error rates and setting a new standard for deep learning models.
+
+### Additional Information:
+- **Impact of ILSVRC:** The ImageNet Challenge played a crucial role in advancing computer vision and deep learning. It spurred the development of increasingly sophisticated models, leading to rapid improvements in image recognition accuracy. The innovations from these competitions, such as CNN architectures, transfer learning, and residual connections, have influenced a wide range of applications beyond image classification, including object detection, segmentation, and even natural language processing.
+
+- **Dataset:** The ImageNet dataset used in the challenge consists of approximately 1.4 million images across 1,000 categories, making it one of the most comprehensive and challenging datasets for visual recognition tasks.
+
+This progression from 2010 to 2016 highlights the rapid advancements in deep learning and the importance of large-scale challenges like ILSVRC in driving innovation in the field.
+
+
