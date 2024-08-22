@@ -279,3 +279,30 @@ This progression from 2010 to 2016 highlights the rapid advancements in deep lea
 <br>
 <br>
 
+
+![image_image](note_image/pic06.png)
+
+Now, if we were to cluster images. This is a data set and this is that label faces in the wild data set.So, we picked out like fourteen  people  and we cluster them and we see that they cluster quite nicely. This is a **t-SNE representation** of this. Normally, they're in 128 dimensional space but t-SNE kind of like compacts it into two dimensions so we can plot it.
+
+<br>
+
+![image_image](note_image/pic07.png)
+<br>
+
+Now, we can see that Bill Gates up here we have Tim here we actually have like one Bill Gates image that kind of clusters into Tim and we also see that Tim is very similar to David Beckham. Then, we have the women and this is quite interesting actually because when I do this how old are you tress sometimes I get mistaken for a man and it's probably because of things because compared to all these other women my face is like has more male features and then the rest sort of now this is a quite limited dataset. We have a couple of outliers in here Venus and Serena Williams **(নিচের দিকে কালো মেয়ে গুলো)** and they cluster very closely together and as we'll see later on and they're often misclassified for each other this is actually a little problem in this data set because it's heavily biased towards male(2D space এ ছেলেদের টা একদম উপরের দিকে আছে) and it's heavily biased towards white **(কালো মেয়েগুলো outliers হিসেবে treat হচ্ছে)** so and this is the benchmark dataset. 
+
+<br>
+This clustering actually seems to make some sense even in the face world. So, now we calculate  distance. 
+<br>
+
+![image](note_image/pic08.png)
+
+We just calculated distance like you would have in math and this distance is called the **L2 norm** and it's mathematically and displayed like this $d(P,Q)$ = $|| f(P)$ - $f(Q)||_2^2$ and I only point that out because in documentation we'll see this notation quite a bit. 
+
+<br>
+
+![image](note_image/pic09.png)
+<br>
+
+The distance is then further placed on something called a unit hyper sphere. which means that like from the center you have a distance of one and and they do this sort of like to scale the distances and a distance of zero means. it's an identical picture and a distance of four is basically as different as can be but it's sort of a scale that goes like this so if you're between zero and one you're pretty darn similar actually um so once we have these embeddings how do we use them to solve faced tasks well it turns out it becomes quite easy because if you want to do verification is this me yes then you can use to look at the distance threshold so you take the picture distance are the ground truth of me and a new picture of me and if it's like
+
