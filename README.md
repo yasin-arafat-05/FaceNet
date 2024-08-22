@@ -304,5 +304,26 @@ We just calculated distance like you would have in math and this distance is cal
 ![image](note_image/pic09.png)
 <br>
 
-The distance is then further placed on something called a unit hyper sphere. which means that like from the center you have a distance of one and and they do this sort of like to scale the distances and a distance of zero means. it's an identical picture and a distance of four is basically as different as can be but it's sort of a scale that goes like this so if you're between zero and one you're pretty darn similar actually um so once we have these embeddings how do we use them to solve faced tasks well it turns out it becomes quite easy because if you want to do verification is this me yes then you can use to look at the distance threshold so you take the picture distance are the ground truth of me and a new picture of me and if it's like
+The distance is then further placed on something called a unit hyper sphere. Which means that like from the center you have a distance of one and and they do this sort of like to scale the distances. A distance of **zero means it's an identical picture** and a **distance of four is basically as different as can be** but it's sort of a scale that goes like this(in the picture we saw sphare) so if you're between zero and one you're pretty done.
+
+<br>
+
+### `We have these embeddings how do we use them to solve faced tasks?`
+<br>
+
+![image_image](note_image/pic10.png)
+
+If you want to do verification is this me `Tess`? Yes, then you can use to look at the **distance threshold** so you take the picture distance are the ground truth of me and a new picture of me and if it's like lower than a certain threshold **(taow in the picture)** maybe circling to seven or something like that then it is considered to be me.
+
+<br>
+
+![image_image](note_image/pic11.png)
+<br>
+
+So, we want to do identification then what we do is you look at the items in our database **(like all these people)** that you have in the database and you look for the lowest distance or **you do SVM classification** so for `Tess` and the lowest distance here would be `0.3` this so it would identify me as Tess. For Anders and the lowest distance would be Chris(0.8) but `it's above a threshold now we will have to set a threshold for this threshold it would be above a threshold so it wouldn't actually be calculating it as as Chris and so it will be calculating just as unknown.` 
+
+
+and finally clustering is East a matter of like finding like doing k-means clustering or something and we were discussing this earlier about because one of the problems of what k-means is is of course it you will have to tell how many how many clusters you have but because we know what a good distance measure is we can actually do some trials and errors and figure out like that the clusters are actually nicely clustered with a zipper and what a distance separating them so that was sort of like the problems in the embeddings now they said recent advances the recent advances turned out to be deep face for example so deep phase also used a similarity function it had something called a Siamese Network so basically a network that has shared weight it was also calculating embeddings it wasn't actually calculating hundred twenty-eight byte embeddings but it was doing it by doing classification so you
+
+
 
