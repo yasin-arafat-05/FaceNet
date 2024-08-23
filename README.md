@@ -320,10 +320,31 @@ If you want to do verification is this me `Tess`? Yes, then you can use to look 
 ![image_image](note_image/pic11.png)
 <br>
 
-So, we want to do identification then what we do is you look at the items in our database **(like all these people)** that you have in the database and you look for the lowest distance or **you do SVM classification** so for `Tess` and the lowest distance here would be `0.3` this so it would identify me as Tess. For Anders and the lowest distance would be Chris(0.8) but `it's above a threshold now we will have to set a threshold for this threshold it would be above a threshold so it wouldn't actually be calculating it as as Chris and so it will be calculating just as unknown.` 
+So, we want to do identification then what we do is you look at the items in our database **(like all these people)** that you have in the database and you look for the lowest distance or **you do SVM classification** so for `Tess` and the lowest distance here would be `0.3` this so it would identify me as Tess. For Anders and the lowest distance would be Chris(0.8) but `it's above a threshold now we will have to set a threshold for this threshold it would be above a threshold so it wouldn't actually be calculating it as as Chris and so it will be calculating just as unknown.` One of the problems of what k-means is of course it you will have to tell how many how many clusters you have. 
 
 
-and finally clustering is East a matter of like finding like doing k-means clustering or something and we were discussing this earlier about because one of the problems of what k-means is is of course it you will have to tell how many how many clusters you have but because we know what a good distance measure is we can actually do some trials and errors and figure out like that the clusters are actually nicely clustered with a zipper and what a distance separating them so that was sort of like the problems in the embeddings now they said recent advances the recent advances turned out to be deep face for example so deep phase also used a similarity function it had something called a Siamese Network so basically a network that has shared weight it was also calculating embeddings it wasn't actually calculating hundred twenty-eight byte embeddings but it was doing it by doing classification so you
+# `Deep Face:`
+
+
+![image_image](note_image/pic12.png)
+
+<br>
+
+The recent advances turned out to be deep face for example so deep phase also used a similarity function it had something called a **Siamese Network** .Basically `a network that has shared weight`.It was also calculating embeddings it wasn't actually calculating hundred twenty-eight byte embeddings but it was doing it by doing classification. You need to sent in two pictures of `someonethat was the same it classified him as one pictures`. If two picture were different then classify them as zero. The difference between this(deep face)  and the paper  facenet is that face and paper actually concentrates on the embedding and actually uses the embedding in the loss function instead of the classification .
+
+`We just quickly points out on siamese networks that the weights are shared. so the siamese bit means that these are copies of each other when you do the weight update it's actually the same object in memory.`
+
+
+<br>
+<br>
+
+# How do they concentrate on the embeddings will do you something called triplet loss and triplet selection.
+
+<br>
+
+Triplet loss and triplet selection so triplet locks works a little bit like this I have a picture of me that's the anchor that is sort of like the the ground truth and then we have a picture of also me so this is a positive and then we have a picture of someone who's not me and negative so you have three pictures anchor positive and negative and the goal of this is to make sure that the anchor to negative always further away than the anger to positive so there is a shortened distance between me and a positive and
+22:47
+then between me and the negative oh um in math terms it looks like this and if we move it to the other side we see in distance anger - positive - distance negative should be less than or equal to zero now this is quite easy to satisfy let me think about that is for a second how you would satisfy that so one way that could quick easy combinations yeah so what's the easy combination like what would what would satisfy this quite easily like if you would do at least sort of like as a baseline is under some numbers whatand
 
 
 
