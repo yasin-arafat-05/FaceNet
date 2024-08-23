@@ -342,9 +342,62 @@ The recent advances turned out to be deep face for example so deep phase also us
 
 <br>
 
-Triplet loss and triplet selection so triplet locks works a little bit like this I have a picture of me that's the anchor that is sort of like the the ground truth and then we have a picture of also me so this is a positive and then we have a picture of someone who's not me and negative so you have three pictures anchor positive and negative and the goal of this is to make sure that the anchor to negative always further away than the anger to positive so there is a shortened distance between me and a positive and
-22:47
-then between me and the negative oh um in math terms it looks like this and if we move it to the other side we see in distance anger - positive - distance negative should be less than or equal to zero now this is quite easy to satisfy let me think about that is for a second how you would satisfy that so one way that could quick easy combinations yeah so what's the easy combination like what would what would satisfy this quite easily like if you would do at least sort of like as a baseline is under some numbers whatand
+![image_image](note_image/pic13.png)
 
+Triplet loss and triplet selection so works a little bit like this I have a picture of me that's `the anchor that is sort of like the the ground truth` and then we have a picture of also me so this is a positive and then we have a picture of someone who's not me and negative. You have three pictures anchor positive and negative and the goal of this is to make sure that `the anchor to negative always further away than the anger to positive` . So, there is a shortened distance between me and a positive. In math terms it looks like this ( $d(A,P) <= d(A,N)$ ). If we move it to the other side we see in distance $d(A,P) - d(A,N) <= 0$ . What's the easy combination like what would what would satisfy this quite easily. 
+
+
+If the distances are always zero, if all the embeddings are the same it would always satisfy this. Yeah so essentially if all the vectors start is zero or if all the vectors started the same random number we will always start to see so that's a bad thing. So, in order to fix that  we add a margin.
+
+![image-image](note_image/pic14.png)
+
+So, we have to say not only the anchor to positive, need to be less than the anchor to negative but it has to be a lot less. Like, we have to stretched out by margin **(difference 0.32-0.3=0.2)**. So, something like `(In the above image)` this where the distance is o.3 and this distance is 0.32 it's no good. If the distance margin is 0.2, so sir point two was what they suggested in the in the paper. So, this is sort of like the essence of the paper finding this triplet loss. 
+
+
+`(আমরা deep face এ embedding calculation এর পর classification করেছিলাম। Classifier হিসেবে  ব্যবহার করা হয় । deep face এ এর সময় embedding গুলোকে feature vector হিসেবে কল্পনা করি । The softmax layer is trained to classify the embeddings into different identities. During training, each embedding is treated as a feature vector, and a label corresponding to the person's identity is provided. The model is optimized to minimize the cross-entropy loss between the predicted class and the actual class. )`
+
+<br>
+<br>
+
+![image](note_image/pic15.png)
+
+### FaceNet and Triplet Loss with 128-Dimensional Embeddings
+
+1. **FaceNet Model**:
+   - FaceNet, developed by Google, is another deep learning model for face recognition that focuses on learning a compact embedding space where distances directly correspond to a measure of face similarity.
+
+2. **Embedding Generation**:
+   - Similar to DeepFace, FaceNet outputs a 128-dimensional embedding vector for each face image. The main difference lies in how these embeddings are trained and utilized.
+
+3. **Triplet Loss**:
+   - **Concept**: FaceNet uses triplet loss during training to ensure that embeddings of the same person (positive pairs) are closer in the embedding space than embeddings of different persons (negative pairs) by a certain margin.
+   - **Triplet Components**:
+     - **Anchor (A)**: A reference image of a person.
+     - **Positive (P)**: Another image of the same person as the anchor.
+     - **Negative (N)**: An image of a different person.
+   - **Loss Function**: The triplet loss function is formulated as:
+
+     
+     $\text{Loss} = \max(||f(A) - f(P)||^2 - ||f(A) - f(N)||^2 + \alpha, 0)$
+
+     where:
+     - $f(\cdot)$ represents the 128-dimensional embedding function.
+     - $||f(A) - f(P)||^2 $ is the squared L2 distance between the anchor and positive embeddings.
+     - $||f(A) - f(N)||^2$ is the squared L2 distance between the anchor and negative embeddings.
+     - $\alpha $ is a margin that is enforced between positive and negative pairs.
+   - **Goal**: The goal is to minimize the distance between the anchor and positive while maximizing the distance between the anchor and negative by at least margin $\alpha $.
+
+
+<br>
+<br>
+
+
+# Finding the right Triplets:
+
+Triplets of finding like those that are very similar actually to get get this to converge fast so we need triplets that violate this equation so we don't need triplets where it's easy to find differences instead we need triplets where the anchor is positive
+
+are actually very different like so and the the positive images should be very different and the anchor to negative should be as close together as possible so this is a hard triplet where the we try to maximize the the anchor capacitor and minimize the anger to negative we do this because if we would use pick easy Triplets like me and a picture of me taking yesterday and then compare that to to me be a person wait Indian heritage that would be very easy for the system to to sort of differentiate whereas me and a picture of meeting 10
+26:34
+years ago and then me and a picture of my sister that would be a good triplet and this re/max and argument is a way to to find those triplets and now so they talked about a novel way of finding these triplets 
 
 
