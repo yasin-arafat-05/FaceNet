@@ -338,7 +338,7 @@ The recent advances turned out to be deep face for example so deep phase also us
 <br>
 <br>
 
-# How do they concentrate on the embeddings will do you something called triplet loss and triplet selection.
+# `How do they concentrate on the embeddings will do you something called triplet loss and triplet selection.`
 
 <br>
 
@@ -392,12 +392,29 @@ So, we have to say not only the anchor to positive, need to be less than the anc
 <br>
 
 
-# Finding the right Triplets:
+# `Finding the right Triplets:`
 
-Triplets of finding like those that are very similar actually to get get this to converge fast so we need triplets that violate this equation so we don't need triplets where it's easy to find differences instead we need triplets where the anchor is positive
+Triplets of finding like those(triplets) that are very similar actually to get this to converge fast. 
+<br>
 
-are actually very different like so and the the positive images should be very different and the anchor to negative should be as close together as possible so this is a hard triplet where the we try to maximize the the anchor capacitor and minimize the anger to negative we do this because if we would use pick easy Triplets like me and a picture of me taking yesterday and then compare that to to me be a person wait Indian heritage that would be very easy for the system to to sort of differentiate whereas me and a picture of meeting 10
-26:34
-years ago and then me and a picture of my sister that would be a good triplet and this re/max and argument is a way to to find those triplets and now so they talked about a novel way of finding these triplets 
+![image_image](note_image/pic17.png)
+<br>
+
+`We need triplets where the anchor is positive are actually very different like the positive images should be very different and the anchor to negative should be as close together as possible so this is a hard triplet where the we try to maximize the the anchor capacitor and minimize the anger to negative we do this because if we would use pick easy Triplets like me and a picture of me taking yesterday and then compare that to to me be a person wait Indian heritage that would be very easy for the system to to sort of differentiate whereas me and a picture of meeting 10 years ago and then me and a picture of my sister that would be a good triplet and this re/max and argument is a way to to find those triplets. (আমরা hard triplets দিয়ে model train করলে সেইটা অনেক strong হবে । )`
+
+
+![image_image](note_image/pic16.png)
+
+They talked about a novel way of finding these triplets. `They came up with two ways of doing this` either you can generate them offline, outside of the training mechanism every N steps from a subset of the data or what they actually settled on was generating the triplets online while actually training. So, every time you start with the new mini batch you do this argmin and argmax and the uses mini batches over a thousand or more but the reason why did don't do it on like the full set of data is because if they would do it in a full set of data you would sort of always pick mislabeled images because mislabeled images for positives would have large distance and mislabeled images for negatives would have a small difference. so that's why you don't want to do that with a full set does that make sense hopefully.
+
+
+# `CNN Architecture: `
+
+<br>
+
+![image_image](note_image/pic18.png)
+<br>
+
+So, the CNN architecture and we have our batch coming in a deep architecture I'll talk about that a little bit with in l2 normalization this is done to put it on the hyper sphere and then we get the embeddings and we send it in to trip with loss so it looks like this we have three CNN's or executive or in
 
 
