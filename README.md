@@ -384,8 +384,8 @@ So, we have to say not only the anchor to positive, need to be less than the anc
      - $f(\cdot)$ represents the 128-dimensional embedding function.
      - $||f(A) - f(P)||^2$ is the squared L2 distance between the anchor and positive embeddings.
      - $||f(A) - f(N)||^2$ is the squared L2 distance between the anchor and negative embeddings.
-     - $\alpha $ is a margin that is enforced between positive and negative pairs.
-   - **Goal**: The goal is to minimize the distance between the anchor and positive while maximizing the distance between the anchor and negative by at least margin $\alpha $.
+     - $\alpha$ is a margin that is enforced between positive and negative pairs.
+   - **Goal**: The goal is to minimize the distance between the anchor and positive while maximizing the distance between the anchor and negative by at least margin $\alpha$.
 
 
 <br>
