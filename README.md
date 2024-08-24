@@ -415,6 +415,63 @@ They talked about a novel way of finding these triplets. `They came up with two 
 ![image_image](note_image/pic18.png)
 <br>
 
-So, the CNN architecture and we have our batch coming in a deep architecture I'll talk about that a little bit with in l2 normalization this is done to put it on the hyper sphere and then we get the embeddings and we send it in to trip with loss so it looks like this we have three CNN's or executive or in
+---
 
+In the provided diagram, the "Deep Architecture" block refers to the CNN model used in the FaceNet implementation. Researcher used different deep architectures (CNN models) are evaluated to see which one works best for the task of face recognition.
+
+1. **NN1 (Zeiler & Fergus, 220x220)**
+2. **NN2 (Inception, 224x224)**
+3. **NN3 (Inception, 160x160)**
+4. **NN4 (Inception, 96x96)**
+5. **NNS1 (mini Inception, 165x165)**
+6. **NNS2 (tiny Inception, 140x116)**
+
+---
+
+So, the CNN architecture and we have our batch coming in a deep architecture. I'll talk about that a little bit with in l2 normalization and this is done on the hyper sphere `(we have seen it while calculating distance or L2 norm)` and then we get the embeddings and we send it into triplet loss. so it looks like this `(avobe the picture)`. We have three CNN's or executive or in essence one CNN because this is siamese network`(avobe the picture-> triplet loss in siamese network)` which shared weights like Tim`(Instructor)` was pointing out it. then outputs the embeddings for the anchor for the positive and for the negative so it's always going to use like the same network to generate these we'll get into this triplet loss which basically is calculates the difference between the anchor positive and the anchor negative and try to minimize that hence it propagates back to this so the siamese network. 
+
+<br>
+
+This is the first time sort of I think I've seen it in in threes `(three picture)` but it's it's a pretty common structure for doing similarity functions in general even if you don't use triplet loss just. `A quick point their own tessin in the paper they did actually say that they they didn't directly compare this method to the to the standard Siamese network so we don't know for sure that this is better but presumably it is better.`
+They were talking about the intuition why this triplet loss was better than for example what deep face was using and when you do classification know what their point was that your embeddings like the byproduct like the embeddings that were generated during the classification would be focused to one single point in space. Where with this each image can sort of get their own dot and but their cluster together and they're neatly clustered together so it gives them a little bit more flexibility.
+
+<br>
+<br>
+
+![image_image](note_image/pic19.png)
+
+This is how it looks `(above the picture)`. So, three input into one model so this is the Siamese network concatenate them and then as an output you now get like all these three embeddings in in one array and that's then sent into the they they looked at a couple of different networks `(CNN Networks)`.
+
+# `They looked at a couple of different networks. Given below;`
+
+![image_image](note_image/pic20.png)
+
+
+### Best Performing Model
+
+According to the table, **NN2 (Inception, 224x224) or GoogleNet** had the highest validation accuracy (VAL) of **89.4% ± 1.6**. This suggests that the Inception model with an input size of 224x224 pixels performed the best among the tested architectures for face recognition tasks using the FaceNet implementation. `In the table also see that the size of image vary in the performance of the model.`
+
+
+# `Data Set: `
+
+![Image_Image](note_image/pic21.png)
+
+The data sets and results as we've seen the inception was the one that they use. They used two hundred and sixty million at some point images. One interesting things about this is when you started thinking about how do they get these twenty six or 260 million images. this is Google so they have access to a lot of data but one problem when you create these datasets is that you normally use face detection to get like sharp crops and face detection is known to not or has later at least been known to not actually identify have very dark skin faces very well so using these techniques of face detection means that you will always have a very biased dataset and a data set is heavily biased towards lighter skinned people. So, that is a little bit troubling and they looked at some the quality didn't seem to be extremely important and they went through and looked at how big the embedding should be because one of the problems that he had before as well with deep face for example is that the embeddings would be sort of like a thousand thousand bytes and and this is now a way to kind of bring it down to 128 bytes which is quite nice and they were getting very good results with 128.
+
+<br>
+
+# `Benchmark Data Set:`
+
+<br>
+
+![image_image](note_image/pic22.png)
+
+Now, we see  benchmark data set so this benchmark data set is called `labelled faces in the wild`. You can just download it as an open source data set with 13,000 images. This is sort of like what all these are tested on and now lately it's been non-citizen in 2018 and the sky from Microsoft and discourage `I can't pronounce her last name` and did some research on this and found that it's basically 77.5% percent male and 83.5% white that particular number came from Hannah Jane in 2014 so the benchmarks are biased in themselves.
+
+![image_image](note_image/pic23.png)
+
+She `(the girl on the picture)` did notice joy and `she does all her research for` the Fate and white mask because most of the face detection can't even detect her face but she then discovered that basically `gender checking` even microsoft face detection and face identification and like it has 12% error rate for darker-skinned males and a 25% error rate in darker-skinned females. So, this is actually a current stream of research in the face recognition area basically how can we devise these datasets how can we get face detection to be better.
+
+
+<br>
 
