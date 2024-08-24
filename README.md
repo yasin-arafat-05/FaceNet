@@ -473,6 +473,26 @@ Now, we see  benchmark data set so this benchmark data set is called `labelled f
 She `(the girl on the picture)` did notice joy and `she does all her research for` the Fate and white mask because most of the face detection can't even detect her face but she then discovered that basically `gender checking` even microsoft face detection and face identification and like it has 12% error rate for darker-skinned males and a 25% error rate in darker-skinned females. So, this is actually a current stream of research in the face recognition area basically how can we devise these datasets how can we get face detection to be better.
 
 
+# `Alignment: `
+
+<br>
+
+![image_image](note_image/pic24.png)
+
+<br>
+
+Now, this paper and a women debating this a lot with me about the alignment. The paper quite specifically states that it's a post invariant and illumination invariant `(Pose Invariant and Illumination Invariant are concepts in computer vision, particularly in the context of face recognition and other image-based tasks. They refer to the robustness of an algorithm or model to variations in the pose of the subject or the lighting conditions under which the image was captured.)` and which it is if you have like tons and tons of pictures however if you don't have transom tons and tons of pictures it's quite nice to do alignment and there are some pretty good alignment of software or alignment packages nowadays, typical alignment `for example open plates which is another open-source implementation` of this is that you take the picture you get landmarks. 
+
+![image_iamge](note_image/pic25.png)
+
+
+`(Tess এর ছবিতে alignment করার পর আমরা উপরের ডানপাশের ছবিগুলো পেয়েছি । )` <br>
+
+`(Presumably, Google have trained this amazing model(FaceNet) because it's been trained on 26 million faces and their training data kind of you know randomizers across all of these different poses to to a reasonable degree therefore its pose invariant but that that model is not publicly of a if we want to use this facenet ourselves we can only train it on publicly available datasets and therefore we'll need to frontal eyes the image because we will lose that diversity)` 
+
+So in the paper they state that croping.So, they do some kind of face detection using Picasso `(Picasso in the context of face detection and image processing typically refers to an open-source image downloading and caching library for Android, developed by Square, Inc)` for example I think the reason for that though is because their input size is so small if it's only 96 pixels squared they would reasonably kind of you know crop the training yeah but it would still then be invariant to pose I guess the reason I'm bringing this up is that the promise of deep learning is that in an ideal world you don't need to do feature extraction at all you can just pass in the raw pixels similar thing with sound processing you know in the olden days you would have to do a Fourier transform and do some feature transformation and and these days given enough data you can just pass the audio data the waveform domain and directly and it's one of these things isn't it if you have enough data it just does everything for you because in facing that it was it was learning a kind of a set of kind of points on the face wasn't it was learning and in deep face.
+
+
 <br>
 <br>
 <br>
